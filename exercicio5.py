@@ -4,7 +4,13 @@ SERVICOS = {
     "1": {"nome": "Corte Simples", "preco": 25.00},
     "2": {"nome": "Corte + Barba", "preco": 35.00},
     "3": {"nome": "Barba Completa", "preco": 20.00},
-    "4": {"nome": "Corte Social", "preco": 30.00}
+    "4": {"nome": "Corte Social", "preco": 30.00},
+    "5": {"nome": "Sobrancelha", "preco": 5.00},
+    "6": {"nome": "Luzes", "preco": 40.00},
+    "7": {"nome": "Pigmentação", "preco": 40.00},
+    "8": {"nome": "Alisamento", "preco": 40.00},
+    "9": {"nome": "Pezinho", "preco": 25.00},
+    "10": {"nome": "Desenho/Risquinho", "preco": 15.00},
 }
 
 BARBEIROS = {
@@ -60,7 +66,7 @@ def agendar_servico():
 
     barbeiro_nome = BARBEIROS[barbeiro_id]["nome"]
 
-    data = input("Digite a data (ex: 2025-05-15): ")
+    data = input("Digite a data (ex: 2025-09-27): ")
 
     dia_da_semana = obter_dia_da_semana(data)
     if not dia_da_semana:
@@ -71,7 +77,7 @@ def agendar_servico():
         print(f"{barbeiro_nome} não trabalha em {dia_da_semana}. Por favor, escolha outro dia ou barbeiro.")
         return
 
-    hora = input("Digite a hora (ex: 14:30): ")
+    hora = input("Digite a hora (ex: 12:20): ")
 
     print("\nServiços:")
     for id_s, servico in SERVICOS.items():
@@ -110,7 +116,7 @@ def agendar_servico():
     print(f"Barbeiro: {barbeiro_nome}")
     print(f"Serviço: {SERVICOS[servico_id]['nome']}")
     print(f"Data e Hora: {data} às {hora}")
-    print("\nUm lembrete será enviado 24h antes!")
+    print("\n---Um lembrete será enviado 24h antes!---")
 
 
 def mostrar_servicos():
